@@ -49,7 +49,7 @@ def highest_accumulated(type_of_sensor: str):
         raise HTTPException(status_code=400, detail=f"Sensor type '{type_of_sensor}' not supported.")
     
     result: Tuple[int, int, float] = sensors_mapping[type_of_sensor].highest_accumulated()
-    if result == (-1, -1):
+    if len(result) < 3 or (result[0] == -1 and result[1] == -1):
         return {
             "highest_accumulated_value": -1,
             "from": -1,
