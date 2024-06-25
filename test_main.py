@@ -54,17 +54,6 @@ def test_register_many_invalid_sensor_type():
 #                            Tests for highest_accumulated endpoint
 #######################################################################################
 
-import pytest
-from fastapi.testclient import TestClient
-from app import app  # assuming your FastAPI app instance is named 'app'
-import time
-
-client = TestClient(app)
-
-#######################################################################################
-#                            Tests for highest_accumulated endpoint
-#######################################################################################
-
 def test_highest_accumulated_valid_with_records():
     type_of_sensor = "TRAFFIC"
 
